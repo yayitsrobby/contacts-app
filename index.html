@@ -11,28 +11,28 @@
   <section class="main-contacts">
     <h1>Contacts</h1>
     <h2>Add a contact:</h2>
-    <p>First Name</p>
+    <p>First Name<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-first">
-    <p>Last Name</p>
+    <p>Last Name<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-last">
-    <p>Phone Number</p>
+    <p>Phone Number<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-phone">
     <p>Street</p>
     <input type="text" name="contact-list" class="input-street">
     <p>City</p>
     <input type="text" name="contact-list" class="input-city">
-    <p>State</p>
+    <p>State<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-state">
     <br>
     <input type="button" value="Add" class="add-button">
   </section>
 
-  <section class="selected-contact">
+  <section class="selected-contact" style="display: none">
     <h2></h2>
     <p class="first-name"></p>
     <p class="last-name"></p>
     <p class="phone-number"></p>
-    <p class="address">
+    <p class="address">Address: 
       <ul class="address-list"></ul>
     </p>
   </section>
