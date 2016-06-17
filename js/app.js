@@ -19,36 +19,34 @@ $(document).ready(function () {
   function addContact() {
     var newContact = Object.create(contactModel);
 
-    for (var i = 0 ; i < inputList.length ; i++) {
-        var inputValue = '.input-' + inputList[i];
-
-        newContact[inputList[i]] = $(inputValue).val();
+    for (var i = 0; i < inputList.length; i++) {
+      var inputValue = '.input-' + inputList[i];
+      newContact[inputList[i]] = $(inputValue).val();
     }
     contactList.push(newContact);
 
     $('.contacts-book').show();
-    $('.contact-list').append('<li>' + )
+    $('.contact-list')
+      .append('<li value="' + contactNumber + '"><a href=#' + '>' + newContact.first + ' ' + newContact.last + '</a></li>')
+
+    contactNumber++;
   }
 
-  function displayContact() {
-
+  function displayContact(contact) {
+    console.log(contactList[contact]);
   }
 
   function isValid() {
     // CHECK IF THREE INPUTS ARE FILLED IN -- FIRST, LAST, PHONE
     if (!($('.input-first').val())) {
-        console.log('first');
-        return false;
-    } 
+      return false;
+    }
     if (!($('.input-last').val())) {
-        console.log('last');        
-        return false;
-    } 
+      return false;
+    }
     if (!($('.input-phone').val())) {
-        console.log('phone');
-        return false;
-    } 
-    console.log('true');
+      return false;
+    }
     return true;
   }
 
@@ -65,25 +63,32 @@ $(document).ready(function () {
 
   var contactList = [];
   var inputList = ['first', 'last', 'phone', 'street', 'city', 'state'];
+  var contactNumber = 0;
 
-    /*----------------- CODE BODY -----------------*/
+  /*----------------- CODE BODY -----------------*/
 
-    // ADD BUTTON RESPONSE
+  // ADD BUTTON RESPONSE
 
-    $('.add-button').click(function() {
-        console.log('added');
+  $('.add-button').click(function () {
+    console.log('added');
 
-        // IF CHECK REQUIREMENTS === TRUE
-        if ( isValid() ) {
+    // IF CHECK REQUIREMENTS === TRUE
+    if (isValid()) {
 
-            //ADD CONTACT
-            addContact();
+      //ADD CONTACT
+      addContact();
 
-        } else {
+    } else {
 
-            // ADD ASTERISK AND ASK THE USER TO FILL-IN
-        }
+      // ADD ASTERISK AND ASK THE USER TO FILL-IN
+    }
 
-    });
+  });
+
+  $('.contact-list').on('click', 'li', function () {
+    var currentContact = $(this).val();
+    // displays contacts
+    displayContact(currentContact);
+  });
 
 });
