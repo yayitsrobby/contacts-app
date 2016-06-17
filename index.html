@@ -15,16 +15,22 @@
     <input type="text" name="contact-list" class="input-first">
     <p>Last Name<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-last">
-    <p>Phone Number<span class="is-required"></span></p>
+    <p>Phone Number
+      <span class="is-required"></span>
+      <input type="button" value="Add Phone Number" class="add-phone">
+    </p>
     <input type="text" name="contact-list" class="input-phone">
+    <div class="phone-field"></div>
     <p>Street</p>
     <input type="text" name="contact-list" class="input-street">
     <p>City</p>
     <input type="text" name="contact-list" class="input-city">
     <p>State<span class="is-required"></span></p>
     <input type="text" name="contact-list" class="input-state">
+    <div class="address-field"></div>
     <br>
     <input type="button" value="Add" class="add-button">
+    <input type="button" value="Add Address" class="add-address">
   </section>
 
   <section class="selected-contact" style="display: none">
@@ -32,7 +38,7 @@
     <p class="first-name"></p>
     <p class="last-name"></p>
     <p class="phone-number"></p>
-    <p class="address">Address: 
+    <p class="address">Address:
       <ul class="address-list"></ul>
     </p>
   </section>

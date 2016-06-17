@@ -11,6 +11,8 @@ Allows user to create and store contacts that include all that
 ----First Name, Last Name, Phone Number, State
 */
 
+'use strict';
+
 /*------------------ MAIN CODE BODY ------------------*/
 $(document).ready(function () {
 
@@ -20,8 +22,13 @@ $(document).ready(function () {
     var newContact = Object.create(contactModel);
 
     for (var i = 0; i < inputList.length; i++) {
+      // if (i === 2) {
+      // for (var j = 0; j < inputList[i].length; j++) {}
+      // else {}
+
       var inputValue = '.input-' + inputList[i];
       newContact[inputList[i]] = $(inputValue).val();
+
     }
     contactList.push(newContact);
 
@@ -41,10 +48,10 @@ $(document).ready(function () {
     $('.phone-number').text("Phone Number: " + contactList[contact].phone);
 
     if (contactList[contact].street !== '') {
-        address = address + contactList[contact].street + ', ';
+      address = address + contactList[contact].street + ', ';
     }
     if (contactList[contact].city !== '') {
-        address = address + contactList[contact].city + ', ';
+      address = address + contactList[contact].city + ', ';
     }
 
     $('.address-list').html('<li>' + address + contactList[contact].state + '</li>');
@@ -73,7 +80,7 @@ $(document).ready(function () {
   var contactModel = {
     first: 'John',
     last: 'Doe',
-    phone: '111-1111',
+    phone: [],
     street: '42 Wallaby Way',
     city: 'Sydney',
     state: 'NSW'
@@ -96,13 +103,26 @@ $(document).ready(function () {
       //ADD CONTACT
       addContact();
       $('.is-required').text('');
-      
+      $('.phone-field').empty();
+      $('.address-field').empty();
+
     } else {
 
       // ADD ASTERISK AND ASK THE USER TO FILL-IN
       $('.is-required').text(' *Required');
     }
 
+  });
+
+  $('.add-phone').click(function () {
+    $('.phone-field').append('<p>Phone Number</p><input type="text" name="contact-list" class="input-phone">');
+  });
+
+  $('.add-address').click(function () {
+    $('.address-field').append('<hr><p>Street</p><input type="text"' +
+      'name="contact-list" class="input-street"><p>City</p>' +
+      '<input type="text" name="contact-list" class="input-city">' +
+      '<p>State</p><input type="text" name="contact-list" class="input-state">');
   });
 
   $('.contact-list').on('click', 'li', function () {

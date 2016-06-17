@@ -1,2 +1,12 @@
+.main-contacts {
+  display: inline-block;
+}
 
+.selected-contact {
+  float: right;
+}
 
+body {
+  max-width: 60%;
+  margin: auto;
+}
