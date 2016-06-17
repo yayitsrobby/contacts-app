@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contacts</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <section class="main-contacts">
+    <h1>Contacts</h1>
+    <h2>Add a contact:</h2>
+    <p>First Name</p>
+    <input type="text" name="contact-list" class="input-first">
+    <p>Last Name</p>
+    <input type="text" name="contact-list" class="input-last">
+    <p>Phone Number</p>
+    <input type="text" name="contact-list" class="input-phone">
+    <p>Street</p>
+    <input type="text" name="contact-list" class="input-street">
+    <p>City</p>
+    <input type="text" name="contact-list" class="input-city">
+    <p>State</p>
+    <input type="text" name="contact-list" class="input-state">
+    <br>
+    <input type="button" value="Add">
+  </section>
+
+  <section class="selected-contact">
+    <h2></h2>
+    <p class="first-name"></p>
+    <p class="last-name"></p>
+    <p class="phone-number"></p>
+    <p class="address">
+      <ul class="address-list"></ul>
+    </p>
+  </section>
+
+  <section class="contacts-book">
+    <h2>Contacts:</h2>
+    <ul class="contact-list"></ul>
+  </section>
+
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src='js/app.js'></script>
+</body>
+
+</html>
