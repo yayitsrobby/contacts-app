@@ -17,7 +17,7 @@ $(document).ready(function () {
   /*------------------ FUNCTIONS ------------------*/
 
   function addContact() {
-
+    
   }
 
   function displayContact() {
@@ -25,7 +25,13 @@ $(document).ready(function () {
   }
 
   function checkRequirements() {
-
+    // CHECK IF THREE INPUTS ARE FILLED IN -- FIRST, LAST, PHONE
+    if ( !($('.input-first').val()) ) {
+        console.log("True");
+        return true
+    } else {
+        return false
+    }
   }
 
   /*------------------ VARIABLES ------------------*/
@@ -39,4 +45,23 @@ $(document).ready(function () {
     state: ''
   }
 
-})
+    /*----------------- CODE BODY -----------------*/
+
+    // ADD BUTTON RESPONSE
+
+    $('.add-button').click(function() {
+        console.log('added');
+        // IF CHECK REQUIREMENTS === TRUE
+        if ( checkRequirements() ) {
+
+            //ADD CONTACT
+            addContact();
+
+        } else {
+
+            // ADD ASTERISK AND ASK THE USER TO FILL-IN
+        }
+
+    });
+
+});
